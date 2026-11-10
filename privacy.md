@@ -1,123 +1,136 @@
 ---
 layout: page
-title: "HelmCode 隐私政策"
-description: "HelmCode 秉承隐私优先 (Privacy-First) 与透明化原则，深入阐述我们对您个人信息及源代码资产的保护承诺。"
+title: "Privacy Policy"
+description: "How HelmCode upholds strict, transparent data privacy for developers across the mobile client and self-hosted runner-core daemon."
 permalink: /privacy/
 ---
 
-**HelmCode 团队**（以下简称“我们”）深知个人信息及工程源代码资产对开发者的至高重要性。我们坚信：**开发者的代码属于且仅属于开发者自己。**
+At **HelmCode**, we believe developer privacy is fundamental. Source code constitutes a creator's core intellectual property, proprietary engineering asset, and professional craft. Our governing principle is unambiguous: **your code and credentials belong entirely to you, and we have neither the desire nor the technical infrastructure to access them.**
 
-本隐私政策旨在向您清晰、透明地阐述：在您使用 HelmCode 客户端及自托管 runner-core 运行时期间，我们如何对待您的数据。
-
----
-
-## 核心原则 (Privacy-First Guarantees)
-
-> **一句话总结**：HelmCode 不设立任何集中式源码中继服务器，不内置任何商业追踪 SDK，不收集或出售您的个人隐私、项目源码或模型对话记录。
-
-1. **零源码云端留存**：您的代码只存在于您的本地设备和您亲自部署的 runner-core 服务器上。
-2. **端对端直连**：iPad 客户端与自托管 runner-core 之间通过您配置的网络地址（HTTP / WebSocket）直连，没有任何“云端中转服务器”劫持数据。
-3. **硬件级凭据安全**：所有连接配对令牌（Device Token）及敏感凭据均加密保存在 Apple 原生 Keychain 中。
+This Privacy Policy explains what data HelmCode and the `runner-core` daemon interact with, how credentials are protected on your devices, and why our decentralized architecture guarantees maximum privacy.
 
 ---
 
-## 1. 我们不收集的数据
+## Architectural Privacy by Design
 
-为了给您提供最纯粹、安全的极客级开发环境，**我们明确承诺不收集以下任何信息**：
-
-- **您的代码内容与文件**：我们无法访问、读取、上传或分析您在编辑器中打开的任何工程文件、目录树或 Git 历史。
-- **键盘按键与编辑记录**：编辑器内的键入、光标行为仅在端侧由 CodeMirror 6 与本地内存处理，绝不上传云端进行按键记录或用户画像构建。
-- **第三方广告与跟踪标识符**：应用内未集成任何第三方商业广告 SDK、IDFA 追踪器或跨平台行为收集框架。
-- **个人敏感身份信息**：我们不强制要求提供真实姓名、身份证件、电话号码即可完整使用自托管软件。
-
----
-
-## 2. 数据的本地与私有存储
-
-在使用 HelmCode 期间，以下必要配置数据仅保存在您的本地设备或您自己的服务器上：
-
-2.1 **Apple 系统 Keychain 加密存储**：
-- 当您完成自托管 runner-core 的配对后，所生成的安全 Bearer Token 将写入 iOS/iPadOS 系统的安全钥匙串（Keychain）中。此数据受到系统硬件级加密保护，应用卸载或您主动断开时将被完全销毁。
-
-2.2 **用户偏好（UserDefaults）**：
-- 您的主题选择（明亮/暗黑/OneDark）、编辑器字体字号、界面面板折叠偏好等非敏感 UI 状态保存在本地 `UserDefaults` 中。
-
-2.3 **离线编辑缓存**：
-- 为确保在弱网或网络瞬断时编辑内容不丢失，编辑器对当前打开的文件进行基于内存及本地应用沙盒的临时缓冲，在执行同步后即时刷入您的自托管 VFS。
-
----
-
-## 3. 自托管环境中的网络数据流向
-
-当您使用 HelmCode 时，实际网络数据流向如下：
+> **The Core Guarantee**: HelmCode does not operate any centralized cloud proxy, repository storage cluster, or source code indexing service. There is no middleman between your iPad and your self-hosted runner.
 
 ```
-[iPad / 客户端]
-      │
-      │  直连 WebSocket / REST (双向加密流)
-      ▼
-[您的自托管 runner-core (服务器/VPS/NAS)]
-      │
-      │  仅在您配置了 AI Agent 时按需请求
-      ▼
-[第三方 AI 模型提供商 (Anthropic / OpenAI 等)]
+┌─────────────────┐       Direct WebSocket / REST       ┌────────────────────────┐
+│  HelmCode iPad  │ ◄═════════════════════════════════► │ runner-core (Your Host)│
+│ (Pure SwiftUI)  │    (Bearer Token in Keychain)       │ (Docker / VPS / Local) │
+└─────────────────┘                                     └───────────┬────────────┘
+                                                                    │ ACP Protocol
+                                                                    ▼
+                                                        ┌────────────────────────┐
+                                                        │ Model Providers        │
+                                                        │ (Anthropic, OpenAI, etc)
+                                                        └────────────────────────┘
 ```
 
-- **客户端到服务端的通信**：文件树检索、代码读写及终端 PTY 命令直接发送至您在应用中填写的 runner-core 服务器地址。建议您使用 HTTPS / WSS 协议以确保公网传输链路的传输层加密安全。
-- **runner-core 服务器内部**：Go 语言编写的 VFS 模块仅在指定挂载的 Workspace 目录下执行文件读写，不会跨越目录访问未授权的主机系统文件。
+---
+
+## 1. Information We Do NOT Collect
+
+We do not collect, monetize, log, or transmit any of the following categories of data:
+
+- **Source Code & Workspace Files**: Neither the HelmCode client nor our organization has access to the contents of your repositories, file trees, Git commits, branches, or code diffs.
+- **Keystrokes & Editor Telemetry**: Everything typed in the CodeMirror 6 editor is processed entirely within local client memory. We do not track keystroke timings, cursor positions, or typing habits.
+- **No Third-Party Analytics or Tracking SDKs**: The application contains zero commercial tracking SDKs, zero advertising identifiers (such as Apple's IDFA), and zero third-party telemetry libraries.
+- **No Account Profiles**: You do not need to register an account with HelmCode to use the client or self-host `runner-core`. We do not collect names, phone numbers, or email addresses.
 
 ---
 
-## 4. 第三方 AI 模型服务商的数据交互
+## 2. Information Stored Locally on Your Device
 
-当您使用 **Agent Commander** 控制台并请求大模型分析或编写代码时：
+To provide a seamless developer experience across app restarts, HelmCode stores minimal, strictly necessary data directly on your hardware:
 
-4.1 **请求发起**：由您的 runner-core 服务（或根据配置直接由端侧）向您指定的模型 API 端点（如 Anthropic、OpenAI、Cursor 等）发送提示词及引用的上下文代码片段。
+### 2.1 Hardware-Backed Keychain Storage
+- **Device Pairing Tokens**: When you pair your iPad client with a `runner-core` instance using a setup code, the resulting authorization Bearer token is written directly to the **Apple Keychain Services** with hardware-level encryption (`kSecAttrAccessibleAfterFirstUnlock`).
+- These tokens never appear in plain-text preference files and are inaccessible to other apps.
+- Disconnecting a runner in settings permanently purges the associated credentials from your Keychain.
 
-4.2 **受制于第三方隐私条款**：您选择的第三方模型服务商对接收到的提示词和代码的处理方式，受到该服务商自身的隐私政策及数据使用协议约束（例如企业版 API 通常承诺不使用客户数据进行基础模型训练）。建议您审阅您所采用模型厂商的隐私政策。
+### 2.2 Local App Preferences (`UserDefaults`)
+- Non-sensitive UI layout parameters are cached in your local sandbox:
+  - Active color theme (Light, Dark, OneDark);
+  - Editor font family and font size preferences;
+  - Sidebar navigator state (e.g., Files vs. Source Control);
+  - Inspector/Commander column visibility toggles;
+  - Sanitized project display names and runner host URLs.
 
-4.3 **API 密钥存储**：您的模型 API Key 均保存在您的自托管环境配置文件或本地受保护存储中，项目方无从获取。
+### 2.3 Transient Buffer Cache
+- While editing, files in active tabs may be cached in transient application memory or sandbox storage to protect against accidental loss during sudden app termination or memory pressure. When synchronized, changes write directly to your runner's Virtual File System (VFS).
 
 ---
 
-## 5. 设备权限的使用说明
+## 3. Data Flow with the Self-Hosted runner-core Daemon
 
-HelmCode 仅在必要时向系统申请以下权限：
+3.1 **Direct Peer-to-Peer Communication**: All network communication occurs exclusively between your client device and the address of the `runner-core` daemon you configure (via HTTP REST and WebSocket connections).
 
-| 权限类别 | 用途说明 | 必要性 |
+3.2 **Virtual Filesystem (VFS) Confinement**: The Go-based `helm-vfs` engine inside `runner-core` interacts only with the workspace path explicitly mounted into the container (e.g., `/app/workspace`). It does not harvest or index unmounted directories on your host server.
+
+3.3 **Transport Security Recommendation**: Because communication transmits code snippets, file trees, and terminal streams, **we strongly recommend using encrypted transport protocols (HTTPS and WSS)** when accessing your runner over public networks. This can be achieved through reverse proxies (such as Nginx, Caddy, or Cloudflare Tunnel) or encrypted mesh overlays (such as Tailscale or WireGuard).
+
+---
+
+## 4. Third-Party AI Models & ACP Harnesses
+
+When you engage the **Agent Commander** to assist with coding, debugging, or test generation:
+
+4.1 **Context Dispatch**: The runner daemon constructs prompts and attaches relevant workspace context (such as files selected with `@file` or skill invocations with `/skill`) and forwards them directly to the AI model provider you have configured (e.g., Anthropic, OpenAI, Cursor, or OpenCode).
+
+4.2 **Independent Provider Policies**: Data sent to external AI providers is governed by the respective provider's terms of service and privacy policies:
+- Anthropic: [anthropic.com/privacy](https://www.anthropic.com/privacy)
+- OpenAI: [openai.com/privacy](https://openai.com/privacy)
+- Most enterprise and developer API tiers provide contractual commitments that user API inputs and outputs will not be used to train foundational models. We encourage you to review the policy of your chosen harness.
+
+4.3 **API Key Security**: Your third-party model API keys reside on your own `runner-core` server configuration (e.g., in `.env` files or secure environment variables) or inside client Keychain storage. HelmCode maintains no access to these keys.
+
+---
+
+## 5. System Permissions on iOS & iPadOS
+
+HelmCode requests only permissions strictly necessary for core engineering functionality:
+
+| Permission | Purpose | Necessity |
 | :--- | :--- | :--- |
-| **本地网络权限 (Local Network)** | 用于在局域网内发现并直接连接处于同一 Wi-Fi 下的 runner-core 主机 | 局域网自托管必需 |
-| **互联网网络权限 (Network)** | 用于与公网自托管服务器通信及拉取代码语法高亮包 | 必需 |
-| **通知权限 (可选)** | 用于长耗时构建任务完成或终端编译结束时的状态提示 | 可选，随时可在系统设置中关闭 |
+| **Local Network** | Enables discovery and direct WebSocket pairing with runner-core instances residing on your local Wi-Fi or home subnet. | Required for LAN runners |
+| **Internet Access** | Allows the app to connect to remote self-hosted runners and download offline syntax highlighting grammar bundles. | Essential |
+| **Notifications (Optional)** | Delivers alerts when long-running compiler tasks or background Docker builds finish execution. | Optional (can be disabled) |
 
 ---
 
-## 6. 您对数据的绝对控制权
+## 6. User Control & Complete Data Deletion
 
-您随时拥有对个人数据的完全自主权：
+You retain absolute dominion over your data at all times:
 
-- **断开与销毁配对**：在「设置 → 运行实例」中点击删除，系统将立即从 Keychain 中物理擦除对应的认证凭据与历史连接记录。
-- **清除所有数据**：直接在 iPad 上卸载 HelmCode 应用，即可将保存在应用沙盒中的所有偏好配置彻底删除。
-- **服务器端数据掌控**：停止或直接删除 `docker compose` 容器及挂载卷，服务器上所有运行时痕迹即可即时清除。
-
----
-
-## 7. 未成年人保护
-
-本软件是一套面向专业软件工程师与编程爱好者的技术开发工具。我们不会故意收集任何 14 周岁以下未成年人的个人数据。若监护人发现未成年人未经同意使用了本软件并可能留存了相关信息，可通过下方联系方式要求处理。
+- **Unpairing a Runner**: In HelmCode Settings, tap to disconnect or remove any registered runner. All authentication tokens and project caches associated with that runner are immediately erased from the Keychain and local storage.
+- **Complete App Deletion**: Uninstalling HelmCode from your iPad removes all sandboxed caches, offline buffers, and user settings stored on the device.
+- **Server-Side Teardown**: To remove all traces on your server, simply stop and remove the Docker container and volumes:
+  ```bash
+  docker compose down -v
+  ```
 
 ---
 
-## 8. 隐私政策的变更
+## 7. Open Source Verification & Auditability
 
-随着 HelmCode 版本的更新与功能迭代，我们可能会适时修订本隐私政策。任何重大变更均会在本页面公示，并在页面顶部显著标注最后修订日期。
+Trust requires transparency. The complete source code for both the HelmCode client application and the `runner-core` execution engine is open source:
+
+- You are invited to independently audit network calls, Keychain interaction routines, and VFS file handlers in our repositories.
+- You can build the application directly from source using Xcode, ensuring that the binaries you run match the open-source codebase exactly.
 
 ---
 
-## 9. 联系我们
+## 8. Changes to this Privacy Policy
 
-如果您对本隐私政策、数据安全实践或您的个人信息权利有任何疑问、建议或投诉，欢迎通过以下方式与我们联系：
+We may update this Privacy Policy from time to time to account for architectural enhancements or regulatory requirements. Any modifications will be posted to this page with an updated "Last Updated" revision date.
 
-- **官方 GitHub**：[github.com/helmcode-app](https://github.com/helmcode-app)
-- **提交 Issue**：[github.com/helmcode-app/HelmCode/issues](https://github.com/helmcode-app/HelmCode/issues)
-- **开源代码审计**：您可以随时在 GitHub 上审阅客户端与后端的全部源码，自行验证隐私安全承诺。
+---
+
+## 9. Contact Us
+
+If you have questions, feedback, or security-related inquiries regarding our privacy practices, please contact us via GitHub:
+
+- **GitHub Organization**: [github.com/helmcode-app](https://github.com/helmcode-app)
+- **Security & Privacy Issues**: [github.com/helmcode-app/HelmCode/issues](https://github.com/helmcode-app/HelmCode/issues)

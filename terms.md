@@ -1,96 +1,107 @@
 ---
 layout: page
-title: "HelmCode 用户服务协议"
-description: "HelmCode 客户端及关联自托管服务的使用条款与权利义务规范。"
+title: "Terms of Service"
+description: "Terms and conditions governing the use of the HelmCode client application, runner-core daemon, and associated developer tools."
 permalink: /terms/
 ---
 
-欢迎阅读 **HelmCode 用户服务协议**（以下简称“本协议”）。本协议由 HelmCode 项目团队（以下简称“我们”或“项目方”）与使用 HelmCode 客户端及关联程序（包括但不限于 runner-core、文档及相关工具，以下统称“本服务”或“本软件”）的用户（以下简称“您”）共同订立。
+Welcome to **HelmCode**. These Terms of Service ("Terms") constitute a legally binding agreement between the HelmCode project contributors ("we", "us", or "our") and you ("you", "user", or "developer"), governing your access to and use of the HelmCode mobile application, the `runner-core` sandbox daemon, related documentation, and associated software components (collectively, the "Software" or "Service").
 
-在使用本软件前，请您务必审慎阅读并充分理解本协议各条款的内容。**一旦您下载、安装、运行或使用本软件的任何部分，即表示您已阅读、理解并同意接受本协议的全部约束。**
-
----
-
-## 1. 服务定义与架构说明
-
-1.1 **软件定位**：HelmCode 是一款以移动优先（iPadOS/macOS）为核心的 AI 辅助编程控制台与代码编辑环境。其前端客户端基于原生 SwiftUI 与 CodeMirror 6 构建，后端由用户自托管或选用的 `runner-core` 运行时驱动。
-
-1.2 **自托管模型 (Self-Hosted Architecture)**：本软件采用去中心化的自托管工作流。工程文件的解析、虚拟文件系统（VFS）、终端 PTY 交互及 AI 模型的代理连接，均由用户在自身所掌控的服务器、本地计算设备或容器中运行。**我们不运营任何集中式云端中转服务器存储您的工程代码。**
+By downloading, compiling, installing, pairing, or using any part of HelmCode, you agree to be bound by these Terms. If you do not agree with any provision of these Terms, you must immediately refrain from installing or using the Software.
 
 ---
 
-## 2. 软件授权与开源许可证
+## 1. Architectural Model & Scope of Service
 
-2.1 **开源许可**：HelmCode 客户端及 runner-core 核心代码遵循 **MIT License** 开源协议发布。在遵守 MIT 许可条款的前提下，您有权查看、复制、修改、合并、发布、分发及自行部署使用。
+1.1 **Decoupled Architecture**: HelmCode is designed as a mobile-first AI coding console. The front-end client operates natively on iOS/iPadOS/macOS with a CodeMirror 6 editor engine, while the backend workspace execution, virtual filesystem (VFS), terminal PTY sessions, and AI harness dispatches are powered by the headless `runner-core` daemon.
 
-2.2 **商标与品牌权利**：“HelmCode”名称、官方图标（App Icon）、Logo 及品牌衍生标识之知识产权均属于 HelmCode 团队所有。未经事先书面许可，您不得以项目官方或认可背书的名义进行商业宣传或混淆性推广。
+1.2 **Self-Hosted Infrastructure**: HelmCode operates on a strictly decentralized, self-hosted model. We do not provide, manage, or operate central cloud relay servers that store, route, or inspect your source code. You choose and control where `runner-core` executes—whether on your local development machine, private homelab, virtual private server (VPS), or containerized cloud host.
 
----
-
-## 3. 用户责任与使用规范
-
-您在使用本服务时，承诺遵守所在司法管辖区适用的全部法律法规，并承诺：
-
-3.1 **安全配置责任**：
-- 您全权负责自托管 runner-core 实例的访问凭证（Pairing Code、Device Token）、网络防火墙、反向代理与 TLS/SSL 证书的安全性。
-- 因您未设置强密码、将管理端口在公网不设防暴露等自身保管不善原因导致的数据泄露、服务器被入侵，由您自行承担全部法律后果。
-
-3.2 **合法合规使用**：
-- 不得利用本软件进行网络攻击、端口未授权扫描、恶意挖矿、散播恶意软件或木马蠕虫。
-- 不得利用本软件生成或传播违反公序良俗、侵犯第三方知识产权或违反法律法规的违法内容。
+1.3 **Zero Proprietary Telemetry**: The Software does not include proprietary tracking servers or code-surveillance backdoors. All interactions between your iPad client and `runner-core` occur directly across your designated network endpoints over HTTP and WebSocket protocols.
 
 ---
 
-## 4. 第三方 AI 模型与 API 密钥
+## 2. Open Source Licensing & Trademarks
 
-4.1 **自主选择模型**：HelmCode 提供了开放的 ACP（Agent Client Protocol）协议接口，允许您自行连接第三方大语言模型服务商（包括但不限于 Anthropic Claude、OpenAI、Grok 等）。
+2.1 **Open Source License**: Both the HelmCode client codebase and the `runner-core` daemon are published as free and open-source software under the **MIT License**. You are granted the right to inspect, fork, modify, merge, distribute, and self-host the Software subject to the terms of the MIT License.
 
-4.2 **服务商规范约束**：您在通过 HelmCode 调用第三方模型时，需自行阅读并遵守该服务商的使用条款（Terms of Use）及可接受使用政策（AUP）。您需自行承担向对应模型服务商支付的 API 费用。
-
-4.3 **生成内容免责**：AI 大模型生成的代码、解释及推导结果均基于概率计算生成，可能存在逻辑缺陷、语法错误或安全隐患。**您应对 AI 建议的代码实施严格的自主代码审查与自动化测试，项目方对 AI 生成代码在生产环境中引发的任何 Bug、系统崩溃或财产损失不承担连带责任。**
+2.2 **Trademarks & Brand Identity**: While the underlying code is open source, the names "HelmCode", the HelmCode logo, App Icon, visual assets, and distinctive design elements are proprietary trademarks of the HelmCode team. Nothing in these Terms grants you permission to use our trademarks to imply official endorsement or affiliation without prior written consent.
 
 ---
 
-## 5. 知识产权与成果归属
+## 3. User Responsibilities & Server Security
 
-5.1 **用户成果归属**：您在 HelmCode 中编写、调试、编译的全部项目源码、资产文件、配置脚本以及您对 AI 提示词产物的采纳成果，其完整的著作权与所有权**100% 归属于您自身**。
+Because HelmCode interfaces with shell environments and arbitrary code execution through `runner-core`, you acknowledge and agree to the following responsibilities:
 
-5.2 **无反向索权**：HelmCode 团队不对用户通过本工具产出的任何商业作品主张任何所有权分成或知识产权。
+3.1 **Host Hardening & Network Exposure**:
+- You are solely responsible for securing the host environment on which you deploy `runner-core`.
+- If you expose `runner-core` ports (e.g., port `18080` / `8080`) to the public internet, you must implement adequate network protections, including TLS/SSL certificates, reverse proxies (such as Nginx, Caddy, or Cloudflare Tunnel), or secure overlay networks (such as Tailscale or WireGuard).
+- You are responsible for safeguarding your pairing setup codes and device authentication Bearer tokens. We cannot recover lost credentials or mitigate unauthorized access resulting from insecure host configurations.
 
----
-
-## 6. 免责声明 (Disclaimer of Warranties)
-
-6.1 **按现状提供**：本软件在法律允许的最大范围内按**“现状 (AS IS)”**和**“可获得性 (AS AVAILABLE)”**提供，不包含任何明示或暗示的商业适销性、特定用途适用性或无侵权担保。
-
-6.2 **不可抗力与网络风险**：因不可抗力、操作系统版本更新与破坏性变更、第三方网络波动、运营商限制或第三方模型 API 中断而导致的服务延迟或中断，项目方不承担赔偿责任。
-
----
-
-## 7. 责任限制 (Limitation of Liability)
-
-在任何情况下，无论基于合同、侵权（包括过失）还是其他法理，HelmCode 团队及其贡献者均不对因使用或无法使用本软件而导致的任何间接、偶然、惩罚性或后果性损害（包括利润损失、数据丢失、业务中断或设备损毁）承担责任。
+3.2 **Prohibited Uses**: You agree that you will not use HelmCode or `runner-core` to:
+- Conduct unauthorized port scanning, vulnerability probing, or network penetration against systems without explicit permission;
+- Deploy, compile, or distribute malicious software, trojans, ransomware, or cryptomining malware;
+- Engage in activities that violate applicable local, national, or international laws or regulations.
 
 ---
 
-## 8. 条款变更与终止
+## 4. Third-Party AI Models & ACP Harnesses
 
-8.1 **条款更新**：我们保留根据软件功能迭代或法律合规要求随时修订本协议的权利。修订后的条款将在本页面公布，并更新“最近更新日期”。若您在修订生效后继续使用本软件，即视为您接受修订后的条款。
+4.1 **ACP Protocol Integration**: HelmCode integrates the Agent Client Protocol (ACP) standard to connect with third-party Large Language Model (LLM) harnesses, including but not limited to OpenCode, Anthropic Claude, OpenAI Codex, Cursor, and xAI Grok.
 
-8.2 **终止**：若您违反本协议中的任何条款，您使用本软件的许可权利将自动终止。
+4.2 **Provider Keys & Costs**: You supply your own API credentials or configure authorized harness tokens. Any usage fees, token consumption costs, rate limits, or billing disputes incurred with third-party model providers are solely between you and the respective provider.
 
----
-
-## 9. 适用法律与争议解决
-
-9.1 本协议的成立、生效、解释及争议解决均适用中华人民共和国法律（仅就冲突法规则而言除外），或在跨国情境下根据适用开源法律的通行原则解释。
-
-9.2 如双方就本协议内容或其执行发生争议，双方应首先本着友好协商的原则解决；协商不成的，任何一方均可向项目运营方所在地有管辖权的人民法院提起诉讼。
+4.3 **AI Output Disclaimer**: 
+- Code suggestions, completions, refactorings, terminal commands, and architectural plans generated by AI agents are probabilistic in nature and may contain logical errors, vulnerabilities, or regressions.
+- **You are solely responsible for reviewing, linting, testing, and verifying all AI-generated code prior to compiling, running, or pushing to production environments.**
+- HelmCode and its contributors shall have no liability whatsoever for bugs, security vulnerabilities, downtime, data corruption, or financial loss resulting from AI-generated instructions or diffs.
 
 ---
 
-## 10. 联系方式
+## 5. Ownership of Work Products
 
-若您对本协议有任何疑问、建议或法律咨询，请通过 GitHub 官方仓库与我们取得联系：
-- 官方仓库：[github.com/helmcode-app](https://github.com/helmcode-app)
-- 问题反馈：[github.com/helmcode-app/HelmCode/issues](https://github.com/helmcode-app/HelmCode/issues)
+5.1 **User Code Ownership**: We assert **zero ownership** over the source code, repositories, configuration files, prompts, and outputs that you create, edit, or compile using HelmCode. 
+
+5.2 **Intellectual Property Retention**: All intellectual property rights in your original code, commits, and derivative works remain exclusively yours. HelmCode does not claim any license, royalty, or proprietary interest in your software creations.
+
+---
+
+## 6. Disclaimer of Warranties
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE AND ASSOCIATED DOCUMENTATION ARE PROVIDED STRICTLY ON AN **"AS IS"** AND **"AS AVAILABLE"** BASIS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, SYSTEM INTEGRATION, QUIET ENJOYMENT, AND NON-INFRINGEMENT.
+
+WE DO NOT WARRANT THAT:
+- THE SOFTWARE WILL MEET YOUR SPECIFIC PROGRAMMING OR OPERATIONAL REQUIREMENTS;
+- THE OPERATION OF HELMCODE OR RUNNER-CORE WILL BE UNINTERRUPTED, BUG-FREE, OR FREE FROM DATA TRANSMISSION DELAYS;
+- VIRTUAL FILESYSTEM (VFS) SYNCHRONIZATION OR TERMINAL PTY SESSIONS WILL REMAIN PERSISTENT ACROSS NETWORK DISCONNECTIONS.
+
+---
+
+## 7. Limitation of Liability
+
+IN NO EVENT SHALL THE HELMCODE PROJECT, ITS FOUNDERS, CONTRIBUTORS, MAINTAINERS, OR AFFILIATES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, LOSS OF SOURCE CODE, LOSS OF DATA, LOSS OF PROFITS, BUSINESS INTERRUPTION, LOSS OF REPUTATION, OR HARDWARE FAILURE) ARISING OUT OF OR IN CONNECTION WITH THE USE OR INABILITY TO USE THE SOFTWARE, REGARDLESS OF THE LEGAL THEORY (WHETHER CONTRACT, TORT, STRICT LIABILITY, OR OTHERWISE), EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+---
+
+## 8. Modifications to Terms
+
+We reserve the right to amend or replace these Terms at any time to reflect software updates, architectural changes, or evolving legal obligations. Updated Terms will be published on this site with a revised "Last Updated" date. Your continued use of the Software following any modification indicates your acceptance of the updated Terms.
+
+---
+
+## 9. Governing Law & Severability
+
+9.1 **Governing Law**: These Terms shall be interpreted and governed by the laws applicable to general open-source software distributions, without regard to conflict of law principles.
+
+9.2 **Severability**: If any provision of these Terms is deemed unlawful, void, or unenforceable by a court of competent jurisdiction, that provision shall be enforced to the maximum extent permissible, and the remaining provisions shall continue in full legal force and effect.
+
+---
+
+## 10. Contact & Community
+
+For legal inquiries, vulnerability reports, or questions regarding these Terms, please reach out via our official GitHub repository:
+
+- **Organization**: [github.com/helmcode-app](https://github.com/helmcode-app)
+- **Client Repository**: [github.com/helmcode-app/HelmCode](https://github.com/helmcode-app/HelmCode)
+- **Runner Daemon Repository**: [github.com/helmcode-app/runner-core](https://github.com/helmcode-app/runner-core)
+- **Issue Tracker**: [github.com/helmcode-app/HelmCode/issues](https://github.com/helmcode-app/HelmCode/issues)

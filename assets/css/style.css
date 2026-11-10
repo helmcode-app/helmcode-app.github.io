@@ -422,7 +422,18 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
-  height: 580px;
+}
+
+.ipad-screen-shot {
+  display: block;
+  line-height: 0;
+}
+
+.hero-screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
 }
 
 /* Mockup Header Toolbar */
@@ -1499,7 +1510,7 @@ img {
     border-radius: 18px;
   }
 
-  .ipad-screen {
-    height: 440px;
+  .hero-screenshot {
+    border-radius: 12px;
   }
 }

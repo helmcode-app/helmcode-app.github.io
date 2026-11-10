@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Code copy feedback (if any copy buttons exist)
+  // Code copy feedback
   document.querySelectorAll('.copy-trigger').forEach(btn => {
     btn.addEventListener('click', async () => {
       const targetId = btn.getAttribute('data-target');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
           await navigator.clipboard.writeText(target.innerText.trim());
           const orig = btn.innerText;
-          btn.innerText = '已复制!';
+          btn.innerText = 'Copied!';
           setTimeout(() => {
             btn.innerText = orig;
           }, 2000);
