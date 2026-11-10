@@ -3,31 +3,93 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   
-  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% if page.url == '/' %}
+  <title>{{ site.title }} | Self-Hosted Developer Environment</title>
+  {% elsif page.title %}
+  <title>{{ page.title }} | HelmCode - Pro AI Coding Console for iPad</title>
+  {% else %}
+  <title>{{ site.title }}</title>
+  {% endif %}
+
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}, {% endif %}{{ site.keywords }}">
+  <meta name="author" content="HelmCode Team">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
-  <!-- Favicon & Icons -->
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/png" href="{{ '/assets/images/icon.png' | relative_url }}">
   <link rel="apple-touch-icon" href="{{ '/assets/images/icon.png' | relative_url }}">
-  <meta name="theme-color" content="#0a0d14">
+  <meta name="theme-color" content="#080a0f">
 
   <!-- Open Graph / Social Media Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:title" content="{% if page.title %}{{ page.title }} | HelmCode{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
+  <meta property="og:site_name" content="HelmCode">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <meta property="og:title" content="{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title }} | HelmCode{% endif %}">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta property="og:image" content="{{ '/assets/images/icon.png' | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/hero-screenshot.png' | absolute_url }}">
+  <meta property="og:image:width" content="2388">
+  <meta property="og:image:height" content="1668">
+  <meta property="og:image:alt" content="HelmCode iPad AI Coding Console Interface Screenshot">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} | HelmCode{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:title" content="{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title }} | HelmCode{% endif %}">
   <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-  <meta name="twitter:image" content="{{ '/assets/images/icon.png' | absolute_url }}">
+  <meta name="twitter:image" content="{{ '/assets/images/hero-screenshot.png' | absolute_url }}">
 
   <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <!-- Schema.org JSON-LD Structured Data for Enhanced SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}",
+        "name": "HelmCode",
+        "description": "{{ site.description }}",
+        "publisher": {
+          "@type": "Organization",
+          "name": "HelmCode Team",
+          "url": "https://github.com/helmcode-app",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "{{ '/assets/images/icon.png' | absolute_url }}"
+          }
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "{{ site.url }}/#application",
+        "name": "HelmCode",
+        "operatingSystem": "iPadOS",
+        "applicationCategory": "DeveloperApplication",
+        "applicationSubCategory": "Integrated Development Environment (IDE)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Professional mobile-first AI coding console built exclusively for iPad. Pure SwiftUI shell, CodeMirror 6 editor, multi-model Agent Commander, and self-hosted runner daemon.",
+        "image": "{{ '/assets/images/icon.png' | absolute_url }}",
+        "screenshot": "{{ '/assets/images/hero-screenshot.png' | absolute_url }}",
+        "author": {
+          "@type": "Organization",
+          "name": "HelmCode Team",
+          "url": "https://github.com/helmcode-app"
+        },
+        "license": "https://opensource.org/licenses/MIT"
+      }
+    ]
+  }
+  </script>
 </head>

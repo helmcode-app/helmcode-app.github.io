@@ -1,11 +1,12 @@
 ---
 layout: page
 title: "Terms of Service"
-description: "Terms and conditions governing the use of the HelmCode client application, runner-core daemon, and associated developer tools."
+description: "Terms and conditions governing the use of the HelmCode iPad client, runner-core daemon, and associated developer tools."
+keywords: "HelmCode terms of service, iPad AI coding console terms, runner-core license, developer software agreement"
 permalink: /terms/
 ---
 
-Welcome to **HelmCode**. These Terms of Service ("Terms") constitute a legally binding agreement between the HelmCode project contributors ("we", "us", or "our") and you ("you", "user", or "developer"), governing your access to and use of the HelmCode mobile application, the `runner-core` sandbox daemon, related documentation, and associated software components (collectively, the "Software" or "Service").
+Welcome to **HelmCode**. These Terms of Service ("Terms") constitute a legally binding agreement between the HelmCode project contributors ("we", "us", or "our") and you ("you", "user", or "developer"), governing your access to and use of the HelmCode iPad application, the `runner-core` sandbox daemon, related documentation, and associated software components (collectively, the "Software" or "Service").
 
 By downloading, compiling, installing, pairing, or using any part of HelmCode, you agree to be bound by these Terms. If you do not agree with any provision of these Terms, you must immediately refrain from installing or using the Software.
 
@@ -13,7 +14,7 @@ By downloading, compiling, installing, pairing, or using any part of HelmCode, y
 
 ## 1. Architectural Model & Scope of Service
 
-1.1 **Decoupled Architecture**: HelmCode is designed as a mobile-first AI coding console. The front-end client operates natively on iOS/iPadOS/macOS with a CodeMirror 6 editor engine, while the backend workspace execution, virtual filesystem (VFS), terminal PTY sessions, and AI harness dispatches are powered by the headless `runner-core` daemon.
+1.1 **Decoupled Architecture & Platform Scope**: HelmCode is designed as an AI coding console built exclusively for iPad. The front-end client operates natively on iPadOS (iOS and macOS are currently not supported) with a CodeMirror 6 editor engine, while the backend workspace execution, virtual filesystem (VFS), terminal PTY sessions, and AI harness dispatches are powered by the headless `runner-core` daemon.
 
 1.2 **Self-Hosted Infrastructure**: HelmCode operates on a strictly decentralized, self-hosted model. We do not provide, manage, or operate central cloud relay servers that store, route, or inspect your source code. You choose and control where `runner-core` executes—whether on your local development machine, private homelab, virtual private server (VPS), or containerized cloud host.
 
@@ -23,7 +24,7 @@ By downloading, compiling, installing, pairing, or using any part of HelmCode, y
 
 ## 2. Open Source Licensing & Trademarks
 
-2.1 **Open Source License**: Both the HelmCode client codebase and the `runner-core` daemon are published as free and open-source software under the **MIT License**. You are granted the right to inspect, fork, modify, merge, distribute, and self-host the Software subject to the terms of the MIT License.
+2.1 **Open Source License**: Both the HelmCode iPad client codebase and the `runner-core` daemon are published as free and open-source software under the **MIT License**. You are granted the right to inspect, fork, modify, merge, distribute, and self-host the Software subject to the terms of the MIT License.
 
 2.2 **Trademarks & Brand Identity**: While the underlying code is open source, the names "HelmCode", the HelmCode logo, App Icon, visual assets, and distinctive design elements are proprietary trademarks of the HelmCode team. Nothing in these Terms grants you permission to use our trademarks to imply official endorsement or affiliation without prior written consent.
 
@@ -102,6 +103,6 @@ We reserve the right to amend or replace these Terms at any time to reflect soft
 For legal inquiries, vulnerability reports, or questions regarding these Terms, please reach out via our official GitHub repository:
 
 - **Organization**: [github.com/helmcode-app](https://github.com/helmcode-app)
-- **Client Repository**: [github.com/helmcode-app/HelmCode](https://github.com/helmcode-app/HelmCode)
+- **iPad Client Repository**: [github.com/helmcode-app/HelmCode](https://github.com/helmcode-app/HelmCode)
 - **Runner Daemon Repository**: [github.com/helmcode-app/runner-core](https://github.com/helmcode-app/runner-core)
 - **Issue Tracker**: [github.com/helmcode-app/HelmCode/issues](https://github.com/helmcode-app/HelmCode/issues)

@@ -1,7 +1,8 @@
 # HelmCode Official Site Jekyll Configuration
 title: "HelmCode - Mobile-First iPad AI Coding Console"
-tagline: "Mobile-First iPad AI Coding Console"
-description: "A professional, mobile-first AI coding environment built for iPad. Featuring a pure SwiftUI shell, CodeMirror 6 editor, multi-model Agent Commander, and a self-hosted WebSocket VFS runner daemon."
+tagline: "Pro AI Coding Console Built Exclusively for iPad"
+description: "The mobile-first AI coding console built exclusively for iPad. Features native iPadOS SwiftUI ergonomics, CodeMirror 6 editor, multi-model Agent Commander (OpenCode, Claude, Codex, Cursor), self-hosted WebSocket VFS, and full WebSSH terminal."
+keywords: "iPad AI coding, iPad IDE, iPad code editor, iPadOS programming, mobile coding console, CodeMirror 6 iPad, self-hosted coding daemon, runner-core, ACP protocol, OpenCode, Claude iPad coding, WebSSH iPad, xterm.js iPadOS, iPad developer console"
 url: "https://helmcode-app.github.io"
 baseurl: ""
 repository: "helmcode-app/helmcode-app.github.io"
@@ -27,3 +28,4 @@ exclude:
   - vendor
   - .git
   - .github
+  - .jekyll-cache

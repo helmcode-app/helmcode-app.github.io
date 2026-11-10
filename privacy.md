@@ -1,13 +1,14 @@
 ---
 layout: page
 title: "Privacy Policy"
-description: "How HelmCode upholds strict, transparent data privacy for developers across the mobile client and self-hosted runner-core daemon."
+description: "How HelmCode upholds strict, transparent data privacy for developers across the iPad client and self-hosted runner-core daemon."
+keywords: "HelmCode privacy policy, iPad coding privacy, self-hosted data security, runner-core security, zero cloud telemetry"
 permalink: /privacy/
 ---
 
 At **HelmCode**, we believe developer privacy is fundamental. Source code constitutes a creator's core intellectual property, proprietary engineering asset, and professional craft. Our governing principle is unambiguous: **your code and credentials belong entirely to you, and we have neither the desire nor the technical infrastructure to access them.**
 
-This Privacy Policy explains what data HelmCode and the `runner-core` daemon interact with, how credentials are protected on your devices, and why our decentralized architecture guarantees maximum privacy.
+This Privacy Policy explains what data HelmCode and the `runner-core` daemon interact with, how credentials are protected on your iPad, and why our decentralized architecture guarantees maximum privacy.
 
 ---
 
@@ -16,16 +17,16 @@ This Privacy Policy explains what data HelmCode and the `runner-core` daemon int
 > **The Core Guarantee**: HelmCode does not operate any centralized cloud proxy, repository storage cluster, or source code indexing service. There is no middleman between your iPad and your self-hosted runner.
 
 ```
-┌─────────────────┐       Direct WebSocket / REST       ┌────────────────────────┐
-│  HelmCode iPad  │ ◄═════════════════════════════════► │ runner-core (Your Host)│
-│ (Pure SwiftUI)  │    (Bearer Token in Keychain)       │ (Docker / VPS / Local) │
-└─────────────────┘                                     └───────────┬────────────┘
-                                                                    │ ACP Protocol
-                                                                    ▼
-                                                        ┌────────────────────────┐
-                                                        │ Model Providers        │
-                                                        │ (Anthropic, OpenAI, etc)
-                                                        └────────────────────────┘
+┌────────────────────────┐       Direct WebSocket / REST       ┌────────────────────────┐
+│  HelmCode iPad Client  │ ◄═════════════════════════════════► │ runner-core (Your Host)│
+│ (Pure iPadOS SwiftUI)  │    (Bearer Token in Keychain)       │ (Docker / VPS / Local) │
+└────────────────────────┘                                     └───────────┬────────────┘
+                                                                           │ ACP Protocol
+                                                                           ▼
+                                                               ┌────────────────────────┐
+                                                               │ Model Providers        │
+                                                               │ (Anthropic, OpenAI, etc)
+                                                               └────────────────────────┘
 ```
 
 ---
@@ -41,7 +42,7 @@ We do not collect, monetize, log, or transmit any of the following categories of
 
 ---
 
-## 2. Information Stored Locally on Your Device
+## 2. Information Stored Locally on Your iPad
 
 To provide a seamless developer experience across app restarts, HelmCode stores minimal, strictly necessary data directly on your hardware:
 
@@ -65,7 +66,7 @@ To provide a seamless developer experience across app restarts, HelmCode stores 
 
 ## 3. Data Flow with the Self-Hosted runner-core Daemon
 
-3.1 **Direct Peer-to-Peer Communication**: All network communication occurs exclusively between your client device and the address of the `runner-core` daemon you configure (via HTTP REST and WebSocket connections).
+3.1 **Direct Peer-to-Peer Communication**: All network communication occurs exclusively between your iPad client and the address of the `runner-core` daemon you configure (via HTTP REST and WebSocket connections).
 
 3.2 **Virtual Filesystem (VFS) Confinement**: The Go-based `helm-vfs` engine inside `runner-core` interacts only with the workspace path explicitly mounted into the container (e.g., `/app/workspace`). It does not harvest or index unmounted directories on your host server.
 
@@ -88,9 +89,9 @@ When you engage the **Agent Commander** to assist with coding, debugging, or tes
 
 ---
 
-## 5. System Permissions on iOS & iPadOS
+## 5. System Permissions on iPadOS
 
-HelmCode requests only permissions strictly necessary for core engineering functionality:
+HelmCode requests only permissions strictly necessary for core engineering functionality on iPad:
 
 | Permission | Purpose | Necessity |
 | :--- | :--- | :--- |
@@ -115,10 +116,10 @@ You retain absolute dominion over your data at all times:
 
 ## 7. Open Source Verification & Auditability
 
-Trust requires transparency. The complete source code for both the HelmCode client application and the `runner-core` execution engine is open source:
+Trust requires transparency. The complete source code for both the HelmCode iPad client application and the `runner-core` execution engine is open source:
 
 - You are invited to independently audit network calls, Keychain interaction routines, and VFS file handlers in our repositories.
-- You can build the application directly from source using Xcode, ensuring that the binaries you run match the open-source codebase exactly.
+- You can build the application directly from source using Xcode targeting iPad, ensuring that the binaries you run match the open-source codebase exactly.
 
 ---
 
