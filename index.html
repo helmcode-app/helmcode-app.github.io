@@ -1,0 +1,531 @@
+---
+layout: default
+title: "HelmCode - 次世代移动优先 AI 编程控制台"
+description: "专为 iPad 与移动端打造的沉浸式 AI 编程环境。结合原生 SwiftUI 体验、CodeMirror 6 专业代码编辑器、多模型 Agent Commander、自托管 WebSocket VFS 与全功能终端。"
+---
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-pill">
+      <span class="hero-pill-badge">NEW</span>
+      <span>移动优先先锋 · 纯原生 SwiftUI 架构</span>
+    </div>
+
+    <h1 class="hero-title">
+      随时随地，在 iPad 上体验<br>
+      <span class="text-gradient">专业级 AI 编程控制台</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      HelmCode 专为平板与移动触控深度打造。搭载 CodeMirror 6 极速编辑器、
+      多模型 Agent Commander、自托管 WebSocket 虚拟文件系统与全功能 WebSSH 终端，释放真正的全天候生产力。
+    </p>
+
+    <div class="hero-cta">
+      <a href="#quickstart" class="btn btn-primary btn-lg">
+        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        快速部署上手
+      </a>
+      <a href="https://github.com/helmcode-app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">
+        <svg class="btn-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+        浏览 GitHub 源码
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>100% 自托管私有化</span>
+      </div>
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>零代码云端留存</span>
+      </div>
+      <div class="hero-meta-item">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        </svg>
+        <span>多模型自由切换 (ACP)</span>
+      </div>
+    </div>
+
+    <!-- Interactive iPad Frame Mockup -->
+    <div class="hero-mockup-wrapper" id="mockup-preview">
+      <div class="hero-mockup-glow"></div>
+      <div class="ipad-frame">
+        <div class="ipad-camera"></div>
+        <div class="ipad-screen">
+          <!-- Window Toolbar -->
+          <div class="mockup-toolbar">
+            <div class="mockup-traffic-lights">
+              <span class="light-red"></span>
+              <span class="light-yellow"></span>
+              <span class="light-green"></span>
+            </div>
+            <div class="mockup-project-tag">
+              <span class="mockup-status-dot"></span>
+              <span>helmcode / runner-core</span>
+            </div>
+            <div class="mockup-actions">
+              <span class="mockup-badge-vfs">VFS: Connected (12ms)</span>
+              <span>⌘J Terminal</span>
+            </div>
+          </div>
+
+          <!-- Split Workspace -->
+          <div class="mockup-workspace">
+            <!-- Sidebar -->
+            <div class="mockup-sidebar">
+              <div class="mockup-sidebar-nav">
+                <span class="active">📁 文件</span>
+                <span>🔍 搜索</span>
+                <span>🔖 书签</span>
+                <span>🌿 Git</span>
+              </div>
+              <div class="mockup-filetree">
+                <div class="tree-item folder"><span>▾ services</span></div>
+                <div class="tree-item folder tree-level-1"><span>▾ runner</span></div>
+                <div class="tree-item tree-level-2 active"><span>📄 server.ts</span></div>
+                <div class="tree-item tree-level-2"><span>📄 agent.ts</span></div>
+                <div class="tree-item tree-level-2"><span>📄 vfs.ts</span></div>
+                <div class="tree-item folder tree-level-1"><span>▸ vfs</span></div>
+                <div class="tree-item folder tree-level-1"><span>▸ webssh</span></div>
+                <div class="tree-item"><span>📄 compose.yaml</span></div>
+                <div class="tree-item"><span>📄 package.json</span></div>
+              </div>
+            </div>
+
+            <!-- Center Editor -->
+            <div class="mockup-editor">
+              <div class="editor-tabs">
+                <div class="editor-tab active">
+                  <span>server.ts</span>
+                  <span style="opacity: 0.6;">✕</span>
+                </div>
+                <div class="editor-tab">
+                  <span>agent.ts</span>
+                </div>
+              </div>
+              <div class="editor-code-body">
+                <div class="code-line"><span class="line-no">1</span><span class="line-code"><span class="kw">import</span> { <span class="type">createRunnerServer</span> } <span class="kw">from</span> <span class="str">"@helmcode/runner"</span>;</span></div>
+                <div class="code-line"><span class="line-no">2</span><span class="line-code"><span class="kw">import</span> { <span class="type">VFSNetworkEngine</span> } <span class="kw">from</span> <span class="str">"./vfs"</span>;</span></div>
+                <div class="code-line"><span class="line-no">3</span><span class="line-code"></span></div>
+                <div class="code-line"><span class="line-no">4</span><span class="line-code"><span class="com">// 初始化 HelmCode runner 控制平面</span></span></div>
+                <div class="code-line"><span class="line-no">5</span><span class="line-code"><span class="kw">export async function</span> <span class="fn">bootstrap</span>() {</span></div>
+                <div class="code-line"><span class="line-no">6</span><span class="line-code">&nbsp;&nbsp;<span class="kw">const</span> app = <span class="kw">await</span> <span class="fn">createRunnerServer</span>({</span></div>
+                <div class="code-line"><span class="line-no">7</span><span class="line-code">&nbsp;&nbsp;&nbsp;&nbsp;mode: <span class="str">"open-core"</span>,</span></div>
+                <div class="code-line"><span class="line-no">8</span><span class="line-code">&nbsp;&nbsp;&nbsp;&nbsp;port: <span class="type">8080</span>,</span></div>
+                <div class="code-line"><span class="line-no">9</span><span class="line-code">&nbsp;&nbsp;&nbsp;&nbsp;enablePTY: <span class="type">true</span>,</span></div>
+                <div class="code-line"><span class="line-no">10</span><span class="line-code">&nbsp;&nbsp;&nbsp;&nbsp;acpHarness: <span class="str">"opencode"</span></span></div>
+                <div class="code-line"><span class="line-no">11</span><span class="line-code">&nbsp;&nbsp;});</span></div>
+                <div class="code-line"><span class="line-no">12</span><span class="line-code">&nbsp;&nbsp;console.<span class="fn">log</span>(<span class="str">"Runner connected via WebSocket VFS."</span>);</span></div>
+                <div class="code-line"><span class="line-no">13</span><span class="line-code">}</span></div>
+              </div>
+            </div>
+
+            <!-- Right Agent Commander -->
+            <div class="mockup-commander">
+              <div class="commander-header">
+                <span>Agent Commander</span>
+                <span class="agent-tag">Claude 3.7 / OpenCode</span>
+              </div>
+              <div class="commander-body">
+                <div class="chat-bubble chat-user">
+                  优化 server.ts 中的 WebSocket 重连心跳机制
+                </div>
+                <div class="chat-bubble chat-agent">
+                  <strong>Agent:</strong> 已分析 <code>server.ts</code> 与 <code>vfs.ts</code>。正在为 VFS 连接添加指数退避重连算法。
+                  <div class="chat-diff-pill">✓ diff generated: +14 -3 lines</div>
+                </div>
+              </div>
+              <div class="commander-composer">
+                <div class="composer-input-box">
+                  <span>输入 <span class="composer-trigger">/</span> 快捷技能，<span class="composer-trigger">@</span> 引用上下文...</span>
+                  <span>↵</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal Panel -->
+          <div class="mockup-terminal">
+            <div class="terminal-titlebar">
+              <span>PTY Terminal — runner-core:bash</span>
+              <span>⌘J to toggle</span>
+            </div>
+            <div><span class="term-cmd">runner-core@node:~$</span> docker compose ps</div>
+            <div class="term-out">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PORTS</div>
+            <div class="term-success">runner-core-dev&nbsp;&nbsp;&nbsp;Up 4 hours&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.0.0.0:18080-&gt;8080/tcp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="section-wrapper" id="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Core Features</span>
+      <h2 class="section-title">专为平板打磨的工程级利器</h2>
+      <p class="section-desc">告别玩具级代码查看器，HelmCode 赋予 iPad 真正的全功能开发与 AI 编排能力。</p>
+    </div>
+
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">移动优先的纯原生体验</h3>
+        <p class="feature-text">
+          基于 Swift 与 SwiftUI 深度构建。无论是 iPadOS 多任务分栏、触控拖拽，还是 Magic Keyboard 键盘快捷键（⌘P, ⌘O, ⌘J），每一个交互都丝滑顺畅、原生贴心。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">Pure SwiftUI</span>
+          <span class="feature-mini-tag">SplitView</span>
+          <span class="feature-mini-tag">键盘快捷键</span>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap icon-purple">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h3 class="feature-title">CodeMirror 6 极速编辑</h3>
+        <p class="feature-text">
+          专业级现代代码编辑内核，内置数十种开发语言的离线语法高亮（Swift, TypeScript, Go, Python, Rust, Dockerfile 等）。毫秒级首字响应，支持 OneDark 主题与多光标编辑。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">CodeMirror 6</span>
+          <span class="feature-mini-tag">离线语法包</span>
+          <span class="feature-mini-tag">OneDark</span>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap icon-blue">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">Agent Commander 领航员</h3>
+        <p class="feature-text">
+          深度集成 ACP (Agent Client Protocol) 协议。支持 OpenCode、Claude、Codex、Cursor、Grok 等多种大模型。使用 <code>/</code> 快捷触发技能，使用 <code>@</code> 引用文件，由 AI 驱动代码重构与自动化生成。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">ACP 协议</span>
+          <span class="feature-mini-tag">多模型路由</span>
+          <span class="feature-mini-tag">智能 Diff 预览</span>
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap icon-green">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">高性能 WebSocket VFS</h3>
+        <p class="feature-text">
+          基于 JSON-RPC over WebSocket 的远程虚拟文件系统。无缝加载万级海量代码仓库，支持大文件分块流式打开、软热重载以及直接在 iPad 上进行 Git 分支切换与变动审查。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">WebSocket RPC</span>
+          <span class="feature-mini-tag">Git 模型</span>
+          <span class="feature-mini-tag">双向热同步</span>
+        </div>
+      </div>
+
+      <!-- Feature 5 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap icon-amber">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </div>
+        <h3 class="feature-title">WebSSH 全功能终端 (⌘J)</h3>
+        <p class="feature-text">
+          随时按下 <code>⌘J</code> 瞬间滑出内置终端。基于 xterm.js 打造的真实 PTY 会话，完整支持 Bash, Zsh, Vim, Tmux，随意执行 <code>npm build</code>、<code>cargo test</code> 或 <code>docker</code> 容器管理。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">xterm.js PTY</span>
+          <span class="feature-mini-tag">常驻会话</span>
+          <span class="feature-mini-tag">独立面板</span>
+        </div>
+      </div>
+
+      <!-- Feature 6 -->
+      <div class="feature-card">
+        <div class="feature-icon-wrap icon-pink">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+        </div>
+        <h3 class="feature-title">安全隐私与 100% 自托管</h3>
+        <p class="feature-text">
+          你的代码和密钥只属于你。runner-core 引擎开源并完全支持在个人服务器、本地工作站或内网 NAS 自托管。点对点安全配对令牌存储于系统 Keychain，零数据上云泄露。
+        </p>
+        <div class="feature-badge-list">
+          <span class="feature-mini-tag">Self-Hosted</span>
+          <span class="feature-mini-tag">Keychain 保护</span>
+          <span class="feature-mini-tag">开源可审计</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture Section -->
+<section class="section-wrapper section-alt" id="architecture">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">System Architecture</span>
+      <h2 class="section-title">分层解耦的云端与端侧协同</h2>
+      <p class="section-desc">将沉重的编译算力与模型调度交给后端沙盒，端侧专注于极致的原生交互体验。</p>
+    </div>
+
+    <div class="arch-grid">
+      <div class="arch-info">
+        <h3>端侧轻量精湛，服务端算力无限</h3>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+          HelmCode 采用现代微内核与沙盒守护设计模式。客户端负责渲染与交互，后端 <code>runner-core</code> 守护进程处理虚拟文件系统、PTY 终端流和多厂商 AI Agent 的接入协议。
+        </p>
+
+        <div class="arch-step-list">
+          <div class="arch-step-item">
+            <div class="arch-step-num">1</div>
+            <div class="arch-step-content">
+              <h4>客户端 (iPad / macOS)</h4>
+              <p>采用纯原生 SwiftUI 架构与 CodeMirror 6，提供极致的编辑手感与多栏分栏导航。</p>
+            </div>
+          </div>
+          <div class="arch-step-item">
+            <div class="arch-step-num">2</div>
+            <div class="arch-step-content">
+              <h4>通信网关 (HTTP + WebSocket)</h4>
+              <p>基于 WebSocket 实现高吞吐双向流通信，承载 VFS 文件树读写、Git 状态推送与 PTY 终端交互。</p>
+            </div>
+          </div>
+          <div class="arch-step-item">
+            <div class="arch-step-num">3</div>
+            <div class="arch-step-content">
+              <h4>后端引擎 (runner-core)</h4>
+              <p>Node.js 控制面驱动 Go 编写的极速 VFS，同时通过 ACP 协议挂载 OpenCode、Claude、Codex 等 AI 代理。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-diagram-card">
+        <!-- Node 1 -->
+        <div class="arch-node client">
+          <div class="arch-node-header">
+            <div class="arch-node-label">
+              <span>📱 HelmCode Client</span>
+            </div>
+            <div class="arch-node-tags">SwiftUI + CM6</div>
+          </div>
+          <div style="color: #94a3b8; font-size: 0.76rem;">
+            NavigationSplitView · CodeMirror 6 Host · Agent Commander Dock · WebSSH (xterm)
+          </div>
+        </div>
+
+        <div class="arch-connector">
+          <span>WebSocket JSON-RPC (Bearer Token)</span>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="arch-node server">
+          <div class="arch-node-header">
+            <div class="arch-node-label">
+              <span>⚡ runner-core (Node.js &amp; Go)</span>
+            </div>
+            <div class="arch-node-tags">Self-Hosted Daemon</div>
+          </div>
+          <div style="color: #94a3b8; font-size: 0.76rem;">
+            • HTTP/WS Control Plane (/v1/sessions, /v1/vfs, /v1/terminal)<br>
+            • Go helm-vfs (Fast Workspace FS &amp; Git)<br>
+            • In-process PTY Terminal Stream
+          </div>
+        </div>
+
+        <div class="arch-connector">
+          <span>ACP Protocol (stdio ndjson)</span>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="arch-node">
+          <div class="arch-node-header">
+            <div class="arch-node-label">
+              <span>🤖 AI Harness / ACP Server</span>
+            </div>
+            <div class="arch-node-tags">Multi-Vendor</div>
+          </div>
+          <div style="color: #94a3b8; font-size: 0.76rem;">
+            OpenCode ACP · Claude 3.7 · Codex · Cursor · Grok (按需激活)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quickstart Section -->
+<section class="section-wrapper" id="quickstart">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">Quick Start</span>
+      <h2 class="section-title">三步快速开启使用</h2>
+      <p class="section-desc">仅需数分钟，即可在本地服务器或云端 VPS 启动后端，并在 iPad 上建立连接。</p>
+    </div>
+
+    <div class="quickstart-steps">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <span class="step-badge">Step 1</span>
+        <h3 class="step-title">启动 runner-core 容器</h3>
+        <p class="step-desc">在任意安装了 Docker 的服务器或电脑上，使用官方 Compose 启动沙盒后端服务：</p>
+        <div class="code-box">
+docker run -d -p 18080:8080 \<br>
+&nbsp;&nbsp;-v $PWD:/app/workspace \<br>
+&nbsp;&nbsp;helmcode/runner-core:latest
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <span class="step-badge">Step 2</span>
+        <h3 class="step-title">在 iPad 上配对设备</h3>
+        <p class="step-desc">打开 iPad 上的 HelmCode，点击「Open Project → Self-hosted」，输入服务器地址与配对安全码：</p>
+        <div class="code-box">
+URL: http://your-server-ip:18080<br>
+Setup Code: SDCN-9XZS
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <span class="step-badge">Step 3</span>
+        <h3 class="step-title">开启高效 AI 编程</h3>
+        <p class="step-desc">连接成功后，万级文件树秒级呈现。按下 ⌘J 唤出终端，或在 Commander 输入提示词由 AI 辅助开发：</p>
+        <div class="code-box">
+/test 运行单元测试<br>
+@server.ts 请为该接口增加限流中间件
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="section-wrapper section-alt" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-tag">F.A.Q</span>
+      <h2 class="section-title">常见问题解答</h2>
+      <p class="section-desc">关于 HelmCode 的运行机制、技术细节与隐私策略。</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item active">
+        <button class="faq-question">
+          <span>HelmCode 与市面上的普通代码编辑器或 Web IDE 有何不同？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          市面上的很多移动端工具要么是简单的文本查看器，要么是把笨重的网页版 VSCode 粗暴塞入 WebView，在触控和手势上有明显卡顿。HelmCode 采用纯原生 SwiftUI 开发外壳，底层集成专为移动端调优的 CodeMirror 6，并通过 WebSocket 协议连接后台 runner-core。不仅占用极低、响应迅速，还具备真正的终端执行能力与原生系统快捷键支持。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>我的工程源码与 API 密钥会被存储在第三方服务器吗？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          绝不。HelmCode 恪守隐私至上原则。项目代码全部保留在您的自托管 runner-core 服务器或指定工作目录中。iPad 客户端通过端对端凭据直接与您的后端建立加密 WebSocket 通信，设备配对 Token 仅持久化在 iPad 系统的 Keychain 安全区中。我们不搭建中间服务器收集您的任何源码、按键或私人数据。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>支持哪些 AI 模型？如何配置它们？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          HelmCode 采用开放的 ACP (Agent Client Protocol) 协议标准。默认搭载 OpenCode，并且支持 Claude 3.7、Codex、Cursor 与 Grok 等。您可以在客户端设置面板或自托管 runner 配置文件中填入对应的 API Key，即可在对话框中随时切换最适宜的模型。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>在外网环境中（如咖啡厅或通勤途中）如何连接家里的 runner-core？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          您可以配合 Tailscale、WireGuard、Cloudflare Tunnel 或拥有公网 IP 的反向代理（如 Nginx / Caddy 配置 SSL 证书）来安全连接处于内网的 runner-core。只需将带有 HTTPS / WSS 的安全域名填入 HelmCode 连接地址即可无缝畅连。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>HelmCode 是开源软件吗？</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          是的，HelmCode 客户端与 runner-core 后端均遵循 MIT 开源许可证。欢迎访问我们的 GitHub 仓库参与贡献代码、提出功能建议或查阅底层实现。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section-wrapper">
+  <div class="container">
+    <div class="cta-box">
+      <h2 class="cta-title">重构移动开发体验，立即启航</h2>
+      <p class="cta-desc">
+        无论在通勤旅途、户外出行还是咖啡馆角落，拿起 iPad，随时进入心流编码状态。
+      </p>
+      <div class="cta-buttons">
+        <a href="#quickstart" class="btn btn-primary btn-lg">开始部署 runner-core</a>
+        <a href="https://github.com/helmcode-app" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg">在 GitHub Star 支持我们</a>
+      </div>
+    </div>
+  </div>
+</section>

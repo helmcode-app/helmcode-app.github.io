@@ -1,0 +1,29 @@
+# HelmCode Official Site Jekyll Configuration
+title: "HelmCode - 次世代移动优先 AI 编程控制台"
+tagline: "Mobile-First iPad AI Coding Console"
+description: "专为 iPad 与移动端打造的沉浸式 AI 编程环境。结合原生 SwiftUI 体验、CodeMirror 6 专业代码编辑器、多模型 Agent Commander、自托管 WebSocket VFS 与全功能终端。"
+url: "https://helmcode-app.github.io"
+baseurl: ""
+repository: "helmcode-app/helmcode-app.github.io"
+github_username: "helmcode-app"
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+permalink: pretty
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - node_modules
+  - vendor
+  - .git
+  - .github
