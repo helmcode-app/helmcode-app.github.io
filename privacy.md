@@ -16,18 +16,9 @@ This Privacy Policy explains what data HelmCode and the `runner-core` daemon int
 
 > **The Core Guarantee**: HelmCode does not operate any centralized cloud proxy, repository storage cluster, or source code indexing service. There is no middleman between your iPad and your self-hosted runner.
 
-```
-┌────────────────────────┐       Direct WebSocket / REST       ┌────────────────────────┐
-│  HelmCode iPad Client  │ ◄═════════════════════════════════► │ runner-core (Your Host)│
-│ (Pure iPadOS SwiftUI)  │    (Bearer Token in Keychain)       │ (Docker / VPS / Local) │
-└────────────────────────┘                                     └───────────┬────────────┘
-                                                                           │ ACP Protocol
-                                                                           ▼
-                                                               ┌────────────────────────┐
-                                                               │ Model Providers        │
-                                                               │ (Anthropic, OpenAI, etc)
-                                                               └────────────────────────┘
-```
+<div class="architecture-diagram-wrapper">
+  <img src="{{ '/assets/images/privacy-architecture.svg' | relative_url }}" alt="HelmCode Architectural Privacy by Design" class="architecture-diagram-img" width="960" height="500" loading="eager">
+</div>
 
 ---
 

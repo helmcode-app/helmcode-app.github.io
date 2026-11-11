@@ -1406,6 +1406,27 @@ img {
   color: var(--accent-cyan);
 }
 
+.architecture-diagram-wrapper {
+  margin: 28px 0 34px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #060913;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.architecture-diagram-wrapper:hover {
+  border-color: rgba(56, 189, 248, 0.28);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 35px rgba(56, 189, 248, 0.12);
+}
+
+.architecture-diagram-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* --------------------------------------------------------------------------
    Animations & Keyframes
    -------------------------------------------------------------------------- */

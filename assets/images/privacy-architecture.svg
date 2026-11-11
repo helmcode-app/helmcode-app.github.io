@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 500" width="100%" height="100%" fill="none" style="max-width: 100%; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', 'Inter', 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="50%" cy="15%" r="85%">
+      <stop offset="0%" stop-color="#16223e" stop-opacity="0.85"/>
+      <stop offset="45%" stop-color="#0c1122" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#060913" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purpleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card Backgrounds -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c30" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d1322" stop-opacity="0.92"/>
+    </linearGradient>
+
+    <!-- Borders -->
+    <linearGradient id="borderIpad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="borderServer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="borderAi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="borderSecurity" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.4"/>
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="shadowBox" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowRightCyan" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowLeftCyan" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 9 1 L 1 5 L 9 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowRightGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowLeftGreen" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 9 1 L 1 5 L 9 9 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowDownPurple" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1 L 9 5 L 1 9 z" fill="#c084fc"/>
+    </marker>
+  </defs>
+
+  <!-- Container Box -->
+  <rect x="2" y="2" width="956" height="496" rx="20" fill="url(#bgGlow)" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- Subtle Glow Accents -->
+  <circle cx="170" cy="180" r="180" fill="url(#cyanGlow)"/>
+  <circle cx="790" cy="180" r="180" fill="url(#greenGlow)"/>
+  <circle cx="730" cy="390" r="150" fill="url(#purpleGlow)"/>
+
+  <!-- Subtle Grid Lines -->
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <line x1="40" y1="75" x2="920" y2="75"/>
+    <line x1="40" y1="175" x2="920" y2="175"/>
+    <line x1="40" y1="285" x2="920" y2="285"/>
+    <line x1="40" y1="385" x2="920" y2="385"/>
+    <line x1="180" y1="30" x2="180" y2="470"/>
+    <line x1="480" y1="30" x2="480" y2="470"/>
+    <line x1="780" y1="30" x2="780" y2="470"/>
+  </g>
+
+  <!-- ==================== TOP GUARANTEE HEADER ==================== -->
+  <g transform="translate(480, 42)">
+    <rect x="-215" y="-18" width="430" height="36" rx="18" fill="rgba(6, 182, 212, 0.08)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.2"/>
+    <path d="M-195 -4 C-195 -4 -188 -10 -182 -11 C-176 -10 -169 -4 -169 -4 C-169 4 -175 11 -182 14 C-189 11 -195 4 -195 -4 Z" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M-186 0 L-183 3 L-178 -3" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="-160" y="5" font-size="12" font-weight="700" fill="#38bdf8" letter-spacing="0.8">DIRECT PEER-TO-PEER · ZERO CLOUD PROXY</text>
+  </g>
+
+  <!-- ==================== CONNECTOR LINKS ==================== -->
+  <!-- iPad (305) to Center (355) -->
+  <line x1="312" y1="195" x2="348" y2="195" stroke="#38bdf8" stroke-width="2.5" marker-start="url(#arrowLeftCyan)" marker-end="url(#arrowRightCyan)"/>
+
+  <!-- Center (605) to Runner (655) -->
+  <line x1="612" y1="195" x2="648" y2="195" stroke="#34d399" stroke-width="2.5" marker-start="url(#arrowLeftGreen)" marker-end="url(#arrowRightGreen)"/>
+
+  <!-- ==================== NODE 1: HELMCODE IPAD ==================== -->
+  <g transform="translate(45, 90)" filter="url(#shadowBox)">
+    <rect width="260" height="210" rx="16" fill="url(#cardBg)" stroke="url(#borderIpad)" stroke-width="1.5"/>
+
+    <!-- Top Badge -->
+    <rect x="18" y="16" width="112" height="22" rx="6" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    <text x="26" y="31" font-size="10" font-weight="700" fill="#38bdf8" letter-spacing="0.6">CLIENT SANDBOX</text>
+
+    <!-- iPad Icon -->
+    <g transform="translate(214, 16)">
+      <rect x="0" y="0" width="28" height="38" rx="4" fill="none" stroke="#38bdf8" stroke-width="1.8"/>
+      <circle cx="14" cy="33" r="1.5" fill="#38bdf8"/>
+      <line x1="8" y1="4" x2="20" y2="4" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+
+    <text x="18" y="66" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="-0.3">HelmCode iPad</text>
+    <text x="18" y="85" font-size="12" font-weight="500" fill="#94a3b8">Pure iPadOS SwiftUI Native Client</text>
+
+    <line x1="18" y1="102" x2="242" y2="102" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Items -->
+    <g transform="translate(18, 120)">
+      <circle cx="5" cy="5" r="3.5" fill="#38bdf8"/>
+      <text x="16" y="9" font-size="12" font-weight="600" fill="#e2e8f0">Hardware-Backed Keychain</text>
+      <text x="16" y="24" font-size="10.5" fill="#64748b">Tokens isolated in Secure Enclave</text>
+
+      <circle cx="5" cy="46" r="3.5" fill="#06b6d4"/>
+      <text x="16" y="50" font-size="12" font-weight="600" fill="#e2e8f0">In-Memory CodeMirror 6</text>
+      <text x="16" y="65" font-size="10.5" fill="#64748b">Zero telemetry, local buffer only</text>
+    </g>
+  </g>
+
+  <!-- ==================== CENTER CONNECTION CAPSULE ==================== -->
+  <g transform="translate(355, 140)" filter="url(#shadowBox)">
+    <rect width="250" height="110" rx="14" fill="#0d1424" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.2"/>
+
+    <!-- Capsule Status Header -->
+    <circle cx="18" cy="22" r="4.5" fill="#10b981"/>
+    <text x="30" y="26" font-size="12.5" font-weight="700" fill="#f1f5f9">Direct WebSocket / REST</text>
+
+    <!-- Protocols -->
+    <rect x="16" y="38" width="218" height="24" rx="6" fill="rgba(56, 189, 248, 0.08)"/>
+    <text x="24" y="54" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="600" fill="#38bdf8">WSS / HTTPS · Tailscale · LAN</text>
+
+    <text x="18" y="77" font-size="10.5" fill="#94a3b8">Hardware Bearer Token Auth · E2E</text>
+
+    <!-- Anti-Proxy Tag -->
+    <g transform="translate(18, 83)">
+      <text x="0" y="16" font-size="9.5" font-weight="700" fill="#f87171">✕  NO HELMCODE RELAY SERVERS</text>
+    </g>
+  </g>
+
+  <!-- ==================== NODE 2: RUNNER-CORE ==================== -->
+  <g transform="translate(655, 90)" filter="url(#shadowBox)">
+    <rect width="260" height="210" rx="16" fill="url(#cardBg)" stroke="url(#borderServer)" stroke-width="1.5"/>
+
+    <!-- Top Badge -->
+    <rect x="18" y="16" width="130" height="22" rx="6" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+    <text x="26" y="31" font-size="10" font-weight="700" fill="#34d399" letter-spacing="0.6">YOUR INFRASTRUCTURE</text>
+
+    <!-- Server Icon -->
+    <g transform="translate(214, 16)">
+      <rect x="0" y="0" width="30" height="10" rx="2" fill="none" stroke="#34d399" stroke-width="1.6"/>
+      <circle cx="6" cy="5" r="1.3" fill="#34d399"/>
+      <rect x="0" y="13" width="30" height="10" rx="2" fill="none" stroke="#34d399" stroke-width="1.6"/>
+      <circle cx="6" cy="18" r="1.3" fill="#34d399"/>
+      <rect x="0" y="26" width="30" height="10" rx="2" fill="none" stroke="#34d399" stroke-width="1.6"/>
+      <circle cx="6" cy="31" r="1.3" fill="#34d399"/>
+    </g>
+
+    <text x="18" y="66" font-size="17" font-weight="700" fill="#ffffff" letter-spacing="-0.3">runner-core Daemon</text>
+    <text x="18" y="85" font-size="12" font-weight="500" fill="#94a3b8">Self-Hosted (Docker / VPS / Mac)</text>
+
+    <line x1="18" y1="102" x2="242" y2="102" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Items -->
+    <g transform="translate(18, 120)">
+      <circle cx="5" cy="5" r="3.5" fill="#34d399"/>
+      <text x="16" y="9" font-size="12" font-weight="600" fill="#e2e8f0">Confined Workspace (VFS)</text>
+      <text x="16" y="24" font-size="10.5" fill="#64748b">Only explicit mounts accessed</text>
+
+      <circle cx="5" cy="46" r="3.5" fill="#10b981"/>
+      <text x="16" y="50" font-size="12" font-weight="600" fill="#e2e8f0">Agent Protocol &amp; WebSSH</text>
+      <text x="16" y="65" font-size="10.5" fill="#64748b">Direct API dispatch, zero logging</text>
+    </g>
+  </g>
+
+  <!-- ==================== VERTICAL CONNECTOR: RUNNER -> AI ==================== -->
+  <g transform="translate(740, 300)">
+    <!-- Vertical downward solid/dashed line -->
+    <line x1="0" y1="0" x2="0" y2="38" stroke="#a855f7" stroke-width="2.2" stroke-dasharray="4 3" marker-end="url(#arrowDownPurple)"/>
+
+    <!-- ACP Badge Tag positioned cleanly to the right of line -->
+    <g transform="translate(12, 8)">
+      <rect width="108" height="22" rx="6" fill="#0d1424" stroke="rgba(192, 132, 252, 0.4)" stroke-width="1"/>
+      <text x="10" y="15" font-size="10" font-family="'JetBrains Mono', monospace" font-weight="600" fill="#c084fc">ACP Protocol</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM LEFT: CLIENT-SIDE AUTHORITY ==================== -->
+  <g transform="translate(45, 340)" filter="url(#shadowBox)">
+    <rect width="475" height="125" rx="14" fill="url(#cardBg)" stroke="url(#borderSecurity)" stroke-width="1.2"/>
+
+    <g transform="translate(18, 18)">
+      <circle cx="12" cy="12" r="12" fill="rgba(56, 189, 248, 0.12)" stroke="#38bdf8" stroke-width="1.5"/>
+      <path d="M7 12 L10 15 L17 8" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="34" y="16" font-size="14.5" font-weight="700" fill="#ffffff">Absolute Client-Side Data Sovereignty</text>
+    </g>
+
+    <g transform="translate(20, 56)">
+      <text x="0" y="14" font-size="11.5" fill="#cbd5e1">• Unpairing immediately wipes auth tokens from Apple Keychain</text>
+      <text x="0" y="34" font-size="11.5" fill="#cbd5e1">• Source code files never transit any third-party or HelmCode server</text>
+      <text x="0" y="54" font-size="11" font-family="'JetBrains Mono', monospace" fill="#64748b">docker compose down -v  →  leaves zero residual host footprint</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM RIGHT: AI MODEL PROVIDERS ==================== -->
+  <g transform="translate(545, 340)" filter="url(#shadowBox)">
+    <rect width="370" height="125" rx="14" fill="url(#cardBg)" stroke="url(#borderAi)" stroke-width="1.2"/>
+
+    <!-- Sparkle / AI Icon -->
+    <g transform="translate(330, 18)">
+      <path d="M10 0 L12 7 L19 10 L12 13 L10 20 L8 13 L1 10 L8 7 Z" fill="#c084fc"/>
+    </g>
+
+    <text x="20" y="32" font-size="14.5" font-weight="700" fill="#ffffff">AI Model Providers</text>
+    <text x="20" y="52" font-size="11.5" font-weight="500" fill="#94a3b8">Anthropic · OpenAI · DeepSeek · Local Ollama</text>
+
+    <line x1="20" y1="64" x2="350" y2="64" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Provider Details -->
+    <g transform="translate(20, 78)">
+      <circle cx="4" cy="5" r="3" fill="#c084fc"/>
+      <text x="14" y="9" font-size="11" fill="#cbd5e1">API keys stay inside your host container / Keychain</text>
+      
+      <circle cx="4" cy="24" r="3" fill="#a855f7"/>
+      <text x="14" y="28" font-size="10.5" fill="#94a3b8">Governed by provider enterprise zero-retention policies</text>
+    </g>
+  </g>
+</svg>
